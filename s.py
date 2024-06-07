@@ -9,10 +9,10 @@ from streamlit_option_menu import option_menu
 
 #CREATE DATAFRAMES FROM SQL
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="phonepe",
+    host="bqucq85nnmli2outycpn-mysql.services.clever-cloud.com",
+    user="ugjgsdtldcakbe34",
+    password="09yGF3rqqYJtb6BQWksl",
+    database="ugjgsdtldcakbe34",
     port="3306"
 )
 cursor = mydb.cursor()
