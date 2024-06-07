@@ -2,7 +2,7 @@ import json
 import streamlit as st
 import pandas as pd
 import requests
-import mysql.connector
+import mysql-connector
 import plotly.express as px
 import plotly.graph_objects as go
 from streamlit_option_menu import option_menu
