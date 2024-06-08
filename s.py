@@ -9,14 +9,18 @@ from streamlit_option_menu import option_menu
 
 
 #CREATE DATAFRAMES FROM SQL
+import mysql.connector
+
 mydb = mysql.connector.connect(
     host="bqucq85nnmli2outycpn-mysql.services.clever-cloud.com",
     user="ugjgsdtldcakbe34",
     password="uGucXaeCyFIqpS5Nkswb",
     database="bqucq85nnmli2outycpn",
-    port="3306"
+    port=3306  # Note: Port should be an integer, not a string
 )
+
 cursor = mydb.cursor()
+
 
 # Aggregated_insurance
 cursor.execute("select * from aggregated_insurance;")
