@@ -12,8 +12,8 @@ from streamlit_option_menu import option_menu
 mydb = mysql.connector.connect(
     host="bqucq85nnmli2outycpn-mysql.services.clever-cloud.com",
     user="ugjgsdtldcakbe34",
-    password="09yGF3rqqYJtb6BQWksl",
-    database="ugjgsdtldcakbe34",
+    password="uGucXaeCyFIqpS5Nkswb",
+    database="bqucq85nnmli2outycpn",
     port="3306"
 )
 cursor = mydb.cursor()
