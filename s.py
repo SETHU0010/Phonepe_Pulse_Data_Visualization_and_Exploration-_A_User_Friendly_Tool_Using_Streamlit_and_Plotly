@@ -425,64 +425,105 @@ def ques10():
     return st.plotly_chart(fig_dt)
 
 
-
-
-#Streamlit part
-
-st.set_page_config(layout= "wide")
+# Streamlit part
+st.set_page_config(layout="wide")
 
 st.title("PHONEPE DATA VISUALIZATION AND EXPLORATION")
 st.write("")
 
-with st.sidebar:
-    select= option_menu("Main Menu",["Home", "Data Exploration", "Top Charts"])
+def main():
+    st.header("Navigation")
+    options = ["Home", "Data Exploration", "Top Charts"]
+    choice = st.radio("Go to", options)
 
+    if choice == "Home":
+        col1, col2 = st.columns(2)
+        with col1:
+            sub_options = ["About the Developer", "Technologies Used", "Problem Statement", "Objective","Approach", "Features",
+                           "Workflow", "Required Python Libraries"]
+            sub_choice = st.radio("Go to", sub_options)
 
-if select == "Home":
+        with col2:
+            if sub_choice == "About the Developer":
+                about_the_developer()
+            elif sub_choice == "Technologies Used":
+                Technologies_Used()
+            elif sub_choice == "Problem Statement":
+                Problem_Statement()
+            elif sub_choice == "Objective":
+                objective()
+            elif sub_choice == "Features":
+                features()
+            elif sub_choice == "Workflow":
+                workflow()
+            elif sub_choice == "Required Python Libraries":
+                required_python_libraries()
+            elif sub_choice == "Approach":
+                approach()
+                
+    elif choice == "Data Exploration":
+        data_exploration()
+        
+    elif choice == "Top Charts":
+        top_charts()
 
-    col1,col2= st.columns(2)
+def about_the_developer():
+    st.header("About the Developer")
+    st.subheader("Contact Details")
+    st.write("Email: sethumadhavanvelu2002@example.com")
+    st.write("Phone: 9159299878")
+    st.write("[LinkedIn ID](https://www.linkedin.com/in/sethumadhavan-v-b84890257/)")
+    st.write("[github.com](https://github.com/SETHU0010/YouTube_Data_Harvesting_and_Warehousing_using_SQL_and_Streamlit)")
 
-    with col1:
-        st.header("PHONEPE")
-        st.subheader("INDIA'S BEST TRANSACTION APP")
-        st.markdown("PhonePe  is an Indian digital payments and financial technology company")
-        st.write("****FEATURES****")
-        st.write("****Credit & Debit card linking****")
-        st.write("****Bank Balance check****")
-        st.write("****Money Storage****")
-        st.write("****PIN Authorization****")
-        st.download_button("DOWNLOAD THE APP NOW", "https://www.phonepe.com/app-download/")
+def Technologies_Used ():
+    st.header("Technologies_Used")    
+    st.caption("Github Cloning")
+    st.caption("Python")
+    st.caption("Pandas")
+    st.caption("MYSQL")
+    st.caption("mysql-connector-python")
+    st.caption("Streamlit")
+    st.caption("Plotly")
 
-    col3,col4= st.columns(2)
+def objective():
+    st.header("Objective")
+    st.write("Develop a comprehensive and user-friendly solution for extracting, transforming, and visualizing data from the PhonePe Pulse GitHub repository.")
 
-    with col4:
-        st.write("****Easy Transactions****")
-        st.write("****One App For All Your Payments****")
-        st.write("****Your Bank Account Is All You Need****")
-        st.write("****Multiple Payment Modes****")
-        st.write("****PhonePe Merchants****")
-        st.write("****Multiple Ways To Pay****")
-        st.write("****1.Direct Transfer & More****")
-        st.write("****2.QR Code****")
-        st.write("****Earn Great Rewards****")
+def features():
+    st.header("Features")
+    st.write("Interactive and visually appealing dashboard.")
+    st.write("Live geo-visualization using Plotly.")
+    st.write("Multiple dropdown options for user interaction.")
+    st.write("Dynamic data updates from a MySQL database.")
+        
+def workflow():
+    st.header("Workflow")
+    st.write("Clone the PhonePe Pulse GitHub repository.")
+    st.write("Clean and preprocess the data.")
+    st.write("Store the data in a MySQL database.")
+    st.write("Develop an interactive dashboard using Streamlit and Plotly.")
+    st.write("Fetch and display data dynamically on the dashboard.")
 
-    col5,col6= st.columns(2)
+def Problem_Statement():
+    st.header("Problem Statement")
+    st.write("Extract, process, and visualize data from the Phonepe Pulse Github repository to provide insights in a user-friendly manner using a dashboard.")
 
-    with col5:
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.write("****No Wallet Top-Up Required****")
-        st.write("****Pay Directly From Any Bank To Any Bank A/C****")
-        st.write("****Instantly & Free****")
+def required_python_libraries():
+    st.header("Required Python Libraries")
+    st.write("The following Python libraries are required for the project:")
+    libraries = ["git", "pandas","mysql.connector", "plotly", "streamlit"]
+    st.write(libraries)
 
-if select == "Data Exploration":
+def approach():
+    st.header("Approach")
+    st.write("Data extraction ")
+    st.write("Data transformation")
+    st.write("Database insertion")
+    st.write("Dashboard creation")
+    st.write("Data retrieval")
+    st.write("Display data in the Streamlit app")
+
+def data_exploration():
     tab1, tab2, tab3= st.tabs(["Aggregated Analysis", "Map Analysis", "Top Analysis"])
 
     with tab1:
@@ -645,41 +686,36 @@ if select == "Data Exploration":
 
             df_top_user_Y_S= top_user_plot_2(df_top_user_Y,state_t3)
 
+def top_charts():
+    ques = st.selectbox("**Select the Question**", ('Top Brands Of Mobiles Used', 
+                                                    'States With Lowest Transaction Amount',
+                                                    'Districts With Highest Transaction Amount',
+                                                    'Top 10 Districts With Lowest Transaction Amount',
+                                                    'Top 10 States With AppOpens', 
+                                                    'Least 10 States With AppOpens',
+                                                    'States With Lowest Transaction Count',
+                                                    'States With Highest Transaction Count',
+                                                    'States With Highest Transaction Amount',
+                                                    'Top 50 Districts With Lowest Transaction Amount'))
 
-if select == "Top Charts":
-
-    ques= st.selectbox("**Select the Question**",('Top Brands Of Mobiles Used','States With Lowest Trasaction Amount',
-                                  'Districts With Highest Transaction Amount','Top 10 Districts With Lowest Transaction Amount',
-                                  'Top 10 States With AppOpens','Least 10 States With AppOpens','States With Lowest Trasaction Count',
-                                 'States With Highest Trasaction Count','States With Highest Trasaction Amount',
-                                 'Top 50 Districts With Lowest Transaction Amount'))
-    
-    if ques=="Top Brands Of Mobiles Used":
+    if ques == "Top Brands Of Mobiles Used":
         ques1()
-
-    elif ques=="States With Lowest Trasaction Amount":
+    elif ques == "States With Lowest Transaction Amount":
         ques2()
-
-    elif ques=="Districts With Highest Transaction Amount":
+    elif ques == "Districts With Highest Transaction Amount":
         ques3()
-
-    elif ques=="Top 10 Districts With Lowest Transaction Amount":
+    elif ques == "Top 10 Districts With Lowest Transaction Amount":
         ques4()
-
-    elif ques=="Top 10 States With AppOpens":
+    elif ques == "Top 10 States With AppOpens":
         ques5()
-
-    elif ques=="Least 10 States With AppOpens":
+    elif ques == "Least 10 States With AppOpens":
         ques6()
-
-    elif ques=="States With Lowest Trasaction Count":
+    elif ques == "States With Lowest Transaction Count":
         ques7()
-
-    elif ques=="States With Highest Trasaction Count":
+    elif ques == "States With Highest Transaction Count":
         ques8()
-
-    elif ques=="States With Highest Trasaction Amount":
+    elif ques == "States With Highest Transaction Amount":
         ques9()
-
-    elif ques=="Top 50 Districts With Lowest Transaction Amount":
+    elif ques == "Top 50 Districts With Lowest Transaction Amount":
         ques10()
+# Call the main functio
