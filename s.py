@@ -473,7 +473,7 @@ def about_the_developer():
     st.write("Email: sethumadhavanvelu2002@example.com")
     st.write("Phone: 9159299878")
     st.write("[LinkedIn ID](https://www.linkedin.com/in/sethumadhavan-v-b84890257/)")
-    st.write("[github.com](https://github.com/SETHU0010/YouTube_Data_Harvesting_and_Warehousing_using_SQL_and_Streamlit)")
+    st.write("[github.com](https://github.com/SETHU0010/Phonepe_Pulse_Data_Visualization_and_Exploration-_A_User_Friendly_Tool_Using_Streamlit_and_Plotly)")
 
 def Technologies_Used ():
     st.header("Technologies_Used")    
